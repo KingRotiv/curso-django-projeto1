@@ -7,12 +7,18 @@ from django.http import HttpResponse
 def home(request):
     return render(
         request=request,
-        template_name='recipes/home.html'
+        template_name='recipes/home.html',
+        context={
+            'name': 'Vitor'
+        }
     )
 
 
 def contact(request):
-    return HttpResponse('Contact')
+    return render(
+        request=request,
+        template_name='recipes/contact.html'
+    )
 
 
 def about(request):
